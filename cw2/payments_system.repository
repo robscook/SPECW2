@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="ASCII"?>
+<repository:Repository xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:repository="http://palladiosimulator.org/PalladioComponentModel/Repository/5.2" xmlns:seff="http://palladiosimulator.org/PalladioComponentModel/SEFF/5.2" id="_xLCKoAKuEemROr8Jgz8NJQ" entityName="Payments System Repository">
+  <components__Repository xsi:type="repository:BasicComponent" id="_dTBo8AKvEemROr8Jgz8NJQ" entityName="InboundProcessing">
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_hb_pcAKvEemROr8Jgz8NJQ" entityName="IHttpEndPoint" providedInterface__OperationProvidedRole="_TtLJAAKvEemROr8Jgz8NJQ"/>
+    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_wMmXAAKvEemROr8Jgz8NJQ" entityName="IOracleDB" requiredInterface__OperationRequiredRole="_maCQwAKvEemROr8Jgz8NJQ"/>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_hb_pcQKvEemROr8Jgz8NJQ" describedService__SEFF="_WQuq4AKvEemROr8Jgz8NJQ">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_hb_pcgKvEemROr8Jgz8NJQ" successor_AbstractAction="_9pxt0AKvEemROr8Jgz8NJQ"/>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_hb_pcwKvEemROr8Jgz8NJQ" predecessor_AbstractAction="_EetlUAKwEemROr8Jgz8NJQ"/>
+      <steps_Behaviour xsi:type="seff:ExternalCallAction" id="_9pxt0AKvEemROr8Jgz8NJQ" entityName="Backup Submission File" predecessor_AbstractAction="_hb_pcgKvEemROr8Jgz8NJQ" successor_AbstractAction="_EetlUAKwEemROr8Jgz8NJQ" calledService_ExternalService="_rdMBkAKvEemROr8Jgz8NJQ" role_ExternalService="_wMmXAAKvEemROr8Jgz8NJQ"/>
+      <steps_Behaviour xsi:type="seff:LoopAction" id="_EetlUAKwEemROr8Jgz8NJQ" entityName="ValidateAllPayments" predecessor_AbstractAction="_9pxt0AKvEemROr8Jgz8NJQ" successor_AbstractAction="_hb_pcwKvEemROr8Jgz8NJQ">
+        <bodyBehaviour_Loop id="_EetlUQKwEemROr8Jgz8NJQ">
+          <steps_Behaviour xsi:type="seff:StartAction" id="_EetlUgKwEemROr8Jgz8NJQ" successor_AbstractAction="_K6sxUAKwEemROr8Jgz8NJQ"/>
+          <steps_Behaviour xsi:type="seff:StopAction" id="_EetlUwKwEemROr8Jgz8NJQ" predecessor_AbstractAction="_OMMXQAKwEemROr8Jgz8NJQ"/>
+          <steps_Behaviour xsi:type="seff:InternalAction" id="_K6sxUAKwEemROr8Jgz8NJQ" entityName="Validate Payment Information" predecessor_AbstractAction="_EetlUgKwEemROr8Jgz8NJQ" successor_AbstractAction="_OMMXQAKwEemROr8Jgz8NJQ">
+            <resourceDemand_Action>
+              <specification_ParametericResourceDemand specification="1000"/>
+              <requiredResource_ParametricResourceDemand href="pathmap://PCM_MODELS/Palladio.resourcetype#_oro4gG3fEdy4YaaT-RYrLQ"/>
+            </resourceDemand_Action>
+          </steps_Behaviour>
+          <steps_Behaviour xsi:type="seff:ExternalCallAction" id="_OMMXQAKwEemROr8Jgz8NJQ" entityName="Store Payment" predecessor_AbstractAction="_K6sxUAKwEemROr8Jgz8NJQ" successor_AbstractAction="_EetlUwKwEemROr8Jgz8NJQ" calledService_ExternalService="_qUOOYAKvEemROr8Jgz8NJQ" role_ExternalService="_wMmXAAKvEemROr8Jgz8NJQ"/>
+        </bodyBehaviour_Loop>
+        <iterationCount_LoopAction specification="paymentsFile.NUMBER_OF_ELEMENTS"/>
+      </steps_Behaviour>
+    </serviceEffectSpecifications__BasicComponent>
+  </components__Repository>
+  <components__Repository xsi:type="repository:BasicComponent" id="_s9BcoAKvEemROr8Jgz8NJQ" entityName="OracleDB">
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_vF3_gAKvEemROr8Jgz8NJQ" entityName="IOracleDB" providedInterface__OperationProvidedRole="_maCQwAKvEemROr8Jgz8NJQ"/>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_vGMIkAKvEemROr8Jgz8NJQ" describedService__SEFF="_qUOOYAKvEemROr8Jgz8NJQ">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_vGMIkQKvEemROr8Jgz8NJQ" successor_AbstractAction="__V-0IAKzEemROr8Jgz8NJQ"/>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_vGMIkgKvEemROr8Jgz8NJQ" predecessor_AbstractAction="__V-0IAKzEemROr8Jgz8NJQ"/>
+      <steps_Behaviour xsi:type="seff:InternalAction" id="__V-0IAKzEemROr8Jgz8NJQ" entityName="DBWrite" predecessor_AbstractAction="_vGMIkQKvEemROr8Jgz8NJQ" successor_AbstractAction="_vGMIkgKvEemROr8Jgz8NJQ">
+        <resourceDemand_Action>
+          <specification_ParametericResourceDemand specification="500"/>
+          <requiredResource_ParametricResourceDemand href="pathmap://PCM_MODELS/Palladio.resourcetype#_oro4gG3fEdy4YaaT-RYrLQ"/>
+        </resourceDemand_Action>
+        <resourceDemand_Action>
+          <specification_ParametericResourceDemand specification="0.001"/>
+          <requiredResource_ParametricResourceDemand href="pathmap://PCM_MODELS/Palladio.resourcetype#_BIjHoQ3KEdyouMqirZIhzQ"/>
+        </resourceDemand_Action>
+      </steps_Behaviour>
+    </serviceEffectSpecifications__BasicComponent>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_vGgRoAKvEemROr8Jgz8NJQ" describedService__SEFF="_rdMBkAKvEemROr8Jgz8NJQ">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_vGgRoQKvEemROr8Jgz8NJQ" successor_AbstractAction="_KGiMoAK0EemROr8Jgz8NJQ"/>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_vGgRogKvEemROr8Jgz8NJQ" predecessor_AbstractAction="_KGiMoAK0EemROr8Jgz8NJQ"/>
+      <steps_Behaviour xsi:type="seff:InternalAction" id="_KGiMoAK0EemROr8Jgz8NJQ" entityName="InternalAction1" predecessor_AbstractAction="_vGgRoQKvEemROr8Jgz8NJQ" successor_AbstractAction="_vGgRogKvEemROr8Jgz8NJQ">
+        <resourceDemand_Action>
+          <specification_ParametericResourceDemand specification="2000"/>
+          <requiredResource_ParametricResourceDemand href="pathmap://PCM_MODELS/Palladio.resourcetype#_oro4gG3fEdy4YaaT-RYrLQ"/>
+        </resourceDemand_Action>
+        <resourceDemand_Action>
+          <specification_ParametericResourceDemand specification="10"/>
+          <requiredResource_ParametricResourceDemand href="pathmap://PCM_MODELS/Palladio.resourcetype#_BIjHoQ3KEdyouMqirZIhzQ"/>
+        </resourceDemand_Action>
+      </steps_Behaviour>
+    </serviceEffectSpecifications__BasicComponent>
+  </components__Repository>
+  <components__Repository xsi:type="repository:BasicComponent" id="_9yGwQFcDEequG_lNC9e-aA" entityName="PEM">
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_fjvsgFcJEequG_lNC9e-aA" entityName="PEM.MP.OperationProvidedRole1" providedInterface__OperationProvidedRole="_9N53AFcDEequG_lNC9e-aA"/>
+  </components__Repository>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_TtLJAAKvEemROr8Jgz8NJQ" entityName="IHttpEndPoint">
+    <signatures__OperationInterface id="_WQuq4AKvEemROr8Jgz8NJQ" entityName="submitFile">
+      <parameters__OperationSignature parameterName="paymentsFile">
+        <dataType__Parameter xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.0"/>
+      </parameters__OperationSignature>
+    </signatures__OperationInterface>
+  </interfaces__Repository>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_maCQwAKvEemROr8Jgz8NJQ" entityName="IOracleDB">
+    <signatures__OperationInterface id="_qUOOYAKvEemROr8Jgz8NJQ" entityName="storedProcedure2"/>
+    <signatures__OperationInterface id="_rdMBkAKvEemROr8Jgz8NJQ" entityName="storedProcedure3"/>
+  </interfaces__Repository>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_9N53AFcDEequG_lNC9e-aA" entityName="MP"/>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_HZiLQFcJEequG_lNC9e-aA" entityName="PEM Interface">
+    <signatures__OperationInterface id="__qKjcFcWEequG_lNC9e-aA" entityName="method1"/>
+  </interfaces__Repository>
+</repository:Repository>
