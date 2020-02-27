@@ -120,6 +120,7 @@
       </steps_Behaviour>
     </serviceEffectSpecifications__BasicComponent>
   </components__Repository>
+  <components__Repository xsi:type="repository:CompositeComponent" id="_zcyI8Fl5EeqLCYZeFxMh9g" entityName="Message Processing"/>
   <interfaces__Repository xsi:type="repository:OperationInterface" id="_TtLJAAKvEemROr8Jgz8NJQ" entityName="IHttpEndPoint">
     <signatures__OperationInterface id="_WQuq4AKvEemROr8Jgz8NJQ" entityName="submitFile">
       <parameters__OperationSignature parameterName="paymentsFile">
@@ -134,7 +135,7 @@
     <signatures__OperationInterface id="_bek9IFfpEeqUs9LIlFJB8Q" entityName="storedProcedure4"/>
     <signatures__OperationInterface id="_bkJZoFfpEeqUs9LIlFJB8Q" entityName="storedProcedure5"/>
   </interfaces__Repository>
-  <interfaces__Repository xsi:type="repository:OperationInterface" id="_9N53AFcDEequG_lNC9e-aA" entityName="MP"/>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_9N53AFcDEequG_lNC9e-aA" entityName="MP Interface"/>
   <interfaces__Repository xsi:type="repository:OperationInterface" id="_HZiLQFcJEequG_lNC9e-aA" entityName="PEM Interface">
     <signatures__OperationInterface id="__qKjcFcWEequG_lNC9e-aA" entityName="registerException"/>
     <signatures__OperationInterface id="_E_O64FfsEeqUs9LIlFJB8Q" entityName="createRefferal"/>
