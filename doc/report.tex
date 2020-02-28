@@ -4,7 +4,7 @@
 \usepackage{lmodern}
 
 \title{SPE: CW2: Performance Modelling}
-\author{Efe Ovadje (K1763735)}
+\author{Efe Ovadje (K1763735), Robert Cook (K1763733), Emmanuel Buraimo (K1630440)}
 \date{2020}
 
 \begin{document}
@@ -41,6 +41,11 @@ There are two NFR's for this application,
 \section*{Processing and exception management (PEM)}
 
 \section*{Oracle server}
+The Oracle server provided read and write functions that could access and manipulate application data, this was through the implementation of five procedures. These procedures are then accessed through the different application components, namely; Inbound Processing, Message Processing and PEM.\linebreak
+
+When we started the project, the basic architecture of the Oracle server had been implemented. Our task was to build upon this architecture and model how the payment system used the Oracle server when a file was submitted into the system. Within the Oracle server Interface, we created the five procedures that would provide the necessary functionality. Connected to the Oracle Server Interface was a module named "Basic Component". The purpose of this component was to be able to assign specifically the action and the resource demand that each procedure would have. Through the use of SEFF diagrams, we could visually see how the different procedures would act and their resource consumption.
+
+Based on the project brief that we were given, we modelled each procedure as follows; Procedure 1 had a resource demand of 500 CPU cycles per read business rules action from Oracle table 1, and an HDD of 2KB; Procedure 2 had a resource demand of 500 CPU cycles per write payment data action to Oracle table 2, and an HDD of 1KB; Procedure 3 had a resource demand of 2000 CPU cycles per backup of submission file action, and an HDD of 10MB; Procedure 4 had a resource demand of 50 CPU cycles per write exception action, and an HDD of 1KB; lastly Procedure 5 had a resource demand of 50 CPU cycles per write exception referral action, and an HDD of 1KB. 
 
 \chapter*{Simulation}
 
