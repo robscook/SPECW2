@@ -1,26 +1,47 @@
 <?xml version="1.0" encoding="ASCII"?>
-<repository:Repository xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:repository="http://palladiosimulator.org/PalladioComponentModel/Repository/5.2" xmlns:seff="http://palladiosimulator.org/PalladioComponentModel/SEFF/5.2" id="_xLCKoAKuEemROr8Jgz8NJQ" entityName="Payments System Repository">
+<repository:Repository xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:repository="http://palladiosimulator.org/PalladioComponentModel/Repository/5.2" xmlns:seff="http://palladiosimulator.org/PalladioComponentModel/SEFF/5.2" xmlns:stoex="http://sdq.ipd.uka.de/StochasticExpressions/2.2" id="_xLCKoAKuEemROr8Jgz8NJQ" entityName="Payments System Repository">
   <components__Repository xsi:type="repository:BasicComponent" id="_dTBo8AKvEemROr8Jgz8NJQ" entityName="InboundProcessing">
     <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_hb_pcAKvEemROr8Jgz8NJQ" entityName="IHttpEndPoint" providedInterface__OperationProvidedRole="_TtLJAAKvEemROr8Jgz8NJQ"/>
     <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_wMmXAAKvEemROr8Jgz8NJQ" entityName="IOracleDB" requiredInterface__OperationRequiredRole="_maCQwAKvEemROr8Jgz8NJQ"/>
     <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_5gblEFmHEeqK9PhYPZoOnw" entityName="InboundProcessing.MP Interface.OperationRequiredRole2" requiredInterface__OperationRequiredRole="_9N53AFcDEequG_lNC9e-aA"/>
     <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_hb_pcQKvEemROr8Jgz8NJQ" describedService__SEFF="_WQuq4AKvEemROr8Jgz8NJQ">
-      <steps_Behaviour xsi:type="seff:StartAction" id="_hb_pcgKvEemROr8Jgz8NJQ" successor_AbstractAction="_9pxt0AKvEemROr8Jgz8NJQ"/>
-      <steps_Behaviour xsi:type="seff:StopAction" id="_hb_pcwKvEemROr8Jgz8NJQ" predecessor_AbstractAction="_EetlUAKwEemROr8Jgz8NJQ"/>
-      <steps_Behaviour xsi:type="seff:ExternalCallAction" id="_9pxt0AKvEemROr8Jgz8NJQ" entityName="Backup Submission File" predecessor_AbstractAction="_hb_pcgKvEemROr8Jgz8NJQ" successor_AbstractAction="_EetlUAKwEemROr8Jgz8NJQ" calledService_ExternalService="_rdMBkAKvEemROr8Jgz8NJQ" role_ExternalService="_wMmXAAKvEemROr8Jgz8NJQ"/>
-      <steps_Behaviour xsi:type="seff:LoopAction" id="_EetlUAKwEemROr8Jgz8NJQ" entityName="ValidateAllPayments" predecessor_AbstractAction="_9pxt0AKvEemROr8Jgz8NJQ" successor_AbstractAction="_hb_pcwKvEemROr8Jgz8NJQ">
-        <bodyBehaviour_Loop id="_EetlUQKwEemROr8Jgz8NJQ">
-          <steps_Behaviour xsi:type="seff:StartAction" id="_EetlUgKwEemROr8Jgz8NJQ" successor_AbstractAction="_K6sxUAKwEemROr8Jgz8NJQ"/>
-          <steps_Behaviour xsi:type="seff:StopAction" id="_EetlUwKwEemROr8Jgz8NJQ" predecessor_AbstractAction="_OMMXQAKwEemROr8Jgz8NJQ"/>
-          <steps_Behaviour xsi:type="seff:InternalAction" id="_K6sxUAKwEemROr8Jgz8NJQ" entityName="Validate Payment Information" predecessor_AbstractAction="_EetlUgKwEemROr8Jgz8NJQ" successor_AbstractAction="_OMMXQAKwEemROr8Jgz8NJQ">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_hb_pcgKvEemROr8Jgz8NJQ" successor_AbstractAction="_b6v6YFobEeqezr6n0Wr8Sw"/>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_hb_pcwKvEemROr8Jgz8NJQ" predecessor_AbstractAction="_b6v6YFobEeqezr6n0Wr8Sw"/>
+      <steps_Behaviour xsi:type="seff:LoopAction" id="_b6v6YFobEeqezr6n0Wr8Sw" entityName="Main" predecessor_AbstractAction="_hb_pcgKvEemROr8Jgz8NJQ" successor_AbstractAction="_hb_pcwKvEemROr8Jgz8NJQ">
+        <bodyBehaviour_Loop id="_b6xIgFobEeqezr6n0Wr8Sw">
+          <steps_Behaviour xsi:type="seff:ExternalCallAction" id="_9pxt0AKvEemROr8Jgz8NJQ" entityName="Backup Submission File" predecessor_AbstractAction="_H67ggFocEeqezr6n0Wr8Sw" successor_AbstractAction="_K6sxUAKwEemROr8Jgz8NJQ" calledService_ExternalService="_-OypMFfoEeqUs9LIlFJB8Q" role_ExternalService="_wMmXAAKvEemROr8Jgz8NJQ"/>
+          <steps_Behaviour xsi:type="seff:StartAction" id="_H67ggFocEeqezr6n0Wr8Sw" successor_AbstractAction="_9pxt0AKvEemROr8Jgz8NJQ"/>
+          <steps_Behaviour xsi:type="seff:LoopAction" id="_EetlUAKwEemROr8Jgz8NJQ" entityName="ValidateAllPayments" predecessor_AbstractAction="_K6sxUAKwEemROr8Jgz8NJQ" successor_AbstractAction="_hGJEYFofEeqezr6n0Wr8Sw">
+            <bodyBehaviour_Loop id="_EetlUQKwEemROr8Jgz8NJQ">
+              <steps_Behaviour xsi:type="seff:StartAction" id="_EetlUgKwEemROr8Jgz8NJQ" successor_AbstractAction="_OMMXQAKwEemROr8Jgz8NJQ"/>
+              <steps_Behaviour xsi:type="seff:ExternalCallAction" id="_OMMXQAKwEemROr8Jgz8NJQ" entityName="Store Payment" predecessor_AbstractAction="_EetlUgKwEemROr8Jgz8NJQ" successor_AbstractAction="_jMuBQFodEeqezr6n0Wr8Sw" calledService_ExternalService="_qUOOYAKvEemROr8Jgz8NJQ" role_ExternalService="_wMmXAAKvEemROr8Jgz8NJQ"/>
+              <steps_Behaviour xsi:type="seff:StopAction" id="_jMuBQFodEeqezr6n0Wr8Sw" predecessor_AbstractAction="_OMMXQAKwEemROr8Jgz8NJQ"/>
+            </bodyBehaviour_Loop>
+            <iterationCount_LoopAction specification="paymentsFile.NUMBER_OF_ELEMENTS"/>
+          </steps_Behaviour>
+          <steps_Behaviour xsi:type="seff:StopAction" id="_cdnsAFodEeqezr6n0Wr8Sw" predecessor_AbstractAction="_hGJEYFofEeqezr6n0Wr8Sw"/>
+          <steps_Behaviour xsi:type="seff:InternalAction" id="_K6sxUAKwEemROr8Jgz8NJQ" entityName="Validate Payment Information" predecessor_AbstractAction="_9pxt0AKvEemROr8Jgz8NJQ" successor_AbstractAction="_EetlUAKwEemROr8Jgz8NJQ">
             <resourceDemand_Action>
-              <specification_ParametericResourceDemand specification="1000"/>
+              <specification_ParametericResourceDemand specification="100"/>
               <requiredResource_ParametricResourceDemand href="pathmap://PCM_MODELS/Palladio.resourcetype#_oro4gG3fEdy4YaaT-RYrLQ"/>
             </resourceDemand_Action>
           </steps_Behaviour>
-          <steps_Behaviour xsi:type="seff:ExternalCallAction" id="_OMMXQAKwEemROr8Jgz8NJQ" entityName="Store Payment" predecessor_AbstractAction="_K6sxUAKwEemROr8Jgz8NJQ" successor_AbstractAction="_EetlUwKwEemROr8Jgz8NJQ" calledService_ExternalService="_qUOOYAKvEemROr8Jgz8NJQ" role_ExternalService="_wMmXAAKvEemROr8Jgz8NJQ"/>
+          <steps_Behaviour xsi:type="seff:BranchAction" id="_hGJEYFofEeqezr6n0Wr8Sw" entityName="Exceptions greater than z&#xA;ero" predecessor_AbstractAction="_EetlUAKwEemROr8Jgz8NJQ" successor_AbstractAction="_cdnsAFodEeqezr6n0Wr8Sw">
+            <branches_Branch xsi:type="seff:GuardedBranchTransition" id="_9xVoEFogEeqezr6n0Wr8Sw" entityName="GuardedBranchTransition1">
+              <branchBehaviour_BranchTransition id="_9xVoEVogEeqezr6n0Wr8Sw">
+                <steps_Behaviour xsi:type="seff:StartAction" id="_9xWPIFogEeqezr6n0Wr8Sw" successor_AbstractAction="_9xWPIVogEeqezr6n0Wr8Sw"/>
+                <steps_Behaviour xsi:type="seff:StopAction" id="_9xWPIVogEeqezr6n0Wr8Sw" predecessor_AbstractAction="_9xWPIFogEeqezr6n0Wr8Sw"/>
+              </branchBehaviour_BranchTransition>
+              <branchCondition_GuardedBranchTransition specification="true"/>
+            </branches_Branch>
+          </steps_Behaviour>
+          <steps_Behaviour xsi:type="seff:SetVariableAction" id="_g5O-4FohEeqezr6n0Wr8Sw" entityName="SetVariableAction1">
+            <localVariableUsages_SetVariableAction>
+              <namedReference__VariableUsage xsi:type="stoex:VariableReference"/>
+            </localVariableUsages_SetVariableAction>
+          </steps_Behaviour>
         </bodyBehaviour_Loop>
-        <iterationCount_LoopAction specification="paymentsFile.NUMBER_OF_ELEMENTS"/>
+        <iterationCount_LoopAction specification="1"/>
       </steps_Behaviour>
     </serviceEffectSpecifications__BasicComponent>
   </components__Repository>
