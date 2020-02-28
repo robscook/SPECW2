@@ -1,0 +1,65 @@
+\documentclass[a4paper,11pt]{report}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+
+\title{SPE: CW2: Performance Modelling}
+\author{Efe Ovadje K1763735, {Emmanuel Obafemi Buraimo K1630440 , Robert Cook  }}
+\date{Feburary 28th 2020}
+
+\begin{document}
+
+\maketitle
+%\tableofcontents
+
+\chapter*{Introduction}
+We have been commissioned
+by a financial services company,
+to assess the feasibility of a system migration of a
+legacy mainframe to the more recent Sun Solaris and
+J2EE platform, while providing the expertise and guidance necessary.
+
+A new application titled, 'Payments and Clearing' is expected to
+utilize this new system.
+It receives payments via \textit{http} from three separate business channels.
+The application is comprised of four major components.
+These are \textit{Inbound}, \textit{Message processing},
+\textit{Processing and exception management} and the \textit{Oracle Server}.
+
+The primary KPS identified during the performance and
+scalability assessment was 'Process Peak Hour Current Processing Day Payments'.
+There are two NFR's for this application,
+'File Inter Arrival Time secs' (NFR1) and
+'File 95\textsuperscript{th} Response Time secs' (NFR2) and the task at hand is to model this complete system and confirm that the application can achieve it'd NFR's during the peak hour .
+
+\chapter*{Modelling}
+This chapter details the layout and the functionality of the models, how they were created and their function along with the data we extracted from each individual model. The four main models defined here are the 
+\begin{itemize}
+  \item Inbound
+  
+  \item Message processing
+  
+  
+  \item Processing and exception management (PEM)
+  \item Oracle server
+\end{itemize}
+
+
+\section*{Inbound}
+The inbound processing component receives payment submission files via HTTP, performs some technical validation on each payment via the MP. If there is an exception raised, this is rolled up into a referral via PEM, while the successful payments are placed into a single batch file which will be validated and distributed accordingly. Our model involved us creating a basic component for the inbound processing whose link to the interface allows us to receive the submission files. Within the basic component we have a 
+
+\section*{Message processing}
+
+\section*{Processing and exception management (PEM)}
+
+\section*{Oracle server}
+
+\chapter*{Simulation}
+
+\section*{SPESIM1}
+
+\section*{SPESIM2}
+
+%\chapter*{JMS modelling}%
+
+\end{document}
