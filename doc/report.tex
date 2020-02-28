@@ -33,12 +33,30 @@ There are two NFR's for this application,
 'File 95 th Response Time secs' (NFR2).
 
 \chapter*{Modelling}
+This chapter details the layout and the functionality of the models, how they were created and their function along with the data we extracted from each individual model. The four main models defined here are the 
+\begin{itemize}
+  \item Inbound
+  
+  \item Message processing
+  
+  
+  \item Processing and exception management (PEM)
+  \item Oracle server
+\end{itemize}
+
 
 \section*{Inbound}
+The inbound processing component receives payment submission files via HTTP, performs some technical validation on each payment via the MP. If there is an exception raised, this is rolled up into a referral via PEM, while the successful payments are placed into a single batch file which will be validated and distributed accordingly. Our model involved us creating a basic component for the inbound processing whose link to the interface allows us to receive the submission files. Within the basic component we have a SEFF which when opened writes a BLOB to the oracle server then internally does validation for 100 CPU cycles after which we modelled a loop action to iterate over every payment in the submission file. If an error occurred during this process, then we create a referral via PEM using an external call action. All this takes place within a branch action. 
+
 
 \section*{Message processing}
 
+The message processing component was part of an interconnected pair of other components that tightly functioned together 
+
+
+
 \section*{Processing and exception management (PEM)}
+
 
 \section*{Oracle server}
 The Oracle server provided read and write functions that could access and manipulate application data, this was through the implementation of five procedures. These procedures are then accessed through the different application components, namely; Inbound Processing, Message Processing and PEM.\linebreak
@@ -48,11 +66,23 @@ When we started the project, the basic architecture of the Oracle server had bee
 Based on the project brief that we were given, we modelled each procedure as follows; Procedure 1 had a resource demand of 500 CPU cycles per read business rules action from Oracle table 1, and an HDD of 2KB; Procedure 2 had a resource demand of 500 CPU cycles per write payment data action to Oracle table 2, and an HDD of 1KB; Procedure 3 had a resource demand of 2000 CPU cycles per backup of submission file action, and an HDD of 10MB; Procedure 4 had a resource demand of 50 CPU cycles per write exception action, and an HDD of 1KB; lastly Procedure 5 had a resource demand of 50 CPU cycles per write exception referral action, and an HDD of 1KB. 
 
 \chapter*{Simulation}
+Now that we had established our models within the repository, we
+began to run simulations based on the specified resource environment.
+Each resource environment is configured to run as an actual physical server. In this instance there are three servers. One for the Inbound component, another for the MP (Message processing) and PEM (Processing and Exception Management) and the last one for the Oracle DB.
+
+As required we created two separate simulations 'SPESIM1' and
+'SPESIM2' which differ by their key performance scenarios.
+
+\begin{itemize}
+\item Server 1: Inbound: CPUs: 12, CPU GHZ: 2
+\item Server 2: MP, PEM: CPUs: 8, CPU GHZ: 2
+\item Server 3: Oracle Server: CPUs: 16, CPU GHZ: 4
+\end{itemize}
 
 \section*{SPESIM1}
 
 \section*{SPESIM2}
 
-\chapter*{JMS modelling}
+%\chapter*{JMS modelling}
 
 \end{document}
