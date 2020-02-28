@@ -2,6 +2,10 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+
+
 
 \title{SPE: CW2: Performance Modelling}
 \author{Efe Ovadje (K1763735), Robert Cook (K1763733), Emmanuel Buraimo (K1630440)}
@@ -80,6 +84,19 @@ As required we created two separate simulations 'SPESIM1' and
 \end{itemize}
 
 \section*{SPESIM1}
+For the first simulation we conducted tests with a variable number of payments. First we ran a simulation using the number of elements as 100,1,000 and 10,000.
+Below are the images from the respective runs along with their values.
+\begin{figure}[hbtp]
+\caption{Histogram of simulation 1 with number of elements as 100}
+\centering
+\includegraphics[width=160mm,scale=0.5]{../../../../../Pictures/sim1/hist.png}
+\end{figure}
+
+\begin{figure}[hbtp]
+\caption{Cumulative distribution function (CDF) of simulation 1 with number of elements as 100}
+\centering
+\includegraphics[width=160mm,scale=0.5]{../../../../../Pictures/sim1/cdf.png}
+\end{figure}
 
 \section*{SPESIM2}
 
