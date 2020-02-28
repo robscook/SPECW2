@@ -3,6 +3,7 @@
   <components__Repository xsi:type="repository:BasicComponent" id="_dTBo8AKvEemROr8Jgz8NJQ" entityName="InboundProcessing">
     <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_hb_pcAKvEemROr8Jgz8NJQ" entityName="IHttpEndPoint" providedInterface__OperationProvidedRole="_TtLJAAKvEemROr8Jgz8NJQ"/>
     <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_wMmXAAKvEemROr8Jgz8NJQ" entityName="IOracleDB" requiredInterface__OperationRequiredRole="_maCQwAKvEemROr8Jgz8NJQ"/>
+    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_5gblEFmHEeqK9PhYPZoOnw" entityName="InboundProcessing.MP Interface.OperationRequiredRole2" requiredInterface__OperationRequiredRole="_9N53AFcDEequG_lNC9e-aA"/>
     <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_hb_pcQKvEemROr8Jgz8NJQ" describedService__SEFF="_WQuq4AKvEemROr8Jgz8NJQ">
       <steps_Behaviour xsi:type="seff:StartAction" id="_hb_pcgKvEemROr8Jgz8NJQ" successor_AbstractAction="_9pxt0AKvEemROr8Jgz8NJQ"/>
       <steps_Behaviour xsi:type="seff:StopAction" id="_hb_pcwKvEemROr8Jgz8NJQ" predecessor_AbstractAction="_EetlUAKwEemROr8Jgz8NJQ"/>
@@ -120,7 +121,23 @@
       </steps_Behaviour>
     </serviceEffectSpecifications__BasicComponent>
   </components__Repository>
-  <components__Repository xsi:type="repository:CompositeComponent" id="_zcyI8Fl5EeqLCYZeFxMh9g" entityName="Message Processing"/>
+  <components__Repository xsi:type="repository:BasicComponent" id="_wJarAFmKEeqK9PhYPZoOnw" entityName="Server Application">
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_HL_R8FmPEeqK9PhYPZoOnw" entityName="Server Application.IOracleDB.OperationProvidedRole1" providedInterface__OperationProvidedRole="_maCQwAKvEemROr8Jgz8NJQ"/>
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_laSAEFmQEeqUsLz76kRHmw" entityName="Server Application.PEM Interface.OperationProvidedRole2" providedInterface__OperationProvidedRole="_HZiLQFcJEequG_lNC9e-aA"/>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_HMJC8FmPEeqK9PhYPZoOnw" describedService__SEFF="_qUOOYAKvEemROr8Jgz8NJQ">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_HMJC8VmPEeqK9PhYPZoOnw" successor_AbstractAction="_Q8xPgFmPEeqK9PhYPZoOnw"/>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_HMJC8lmPEeqK9PhYPZoOnw" predecessor_AbstractAction="_Q8xPgFmPEeqK9PhYPZoOnw"/>
+      <steps_Behaviour xsi:type="seff:InternalAction" id="_Q8xPgFmPEeqK9PhYPZoOnw" entityName="InternalAction1" predecessor_AbstractAction="_HMJC8VmPEeqK9PhYPZoOnw" successor_AbstractAction="_HMJC8lmPEeqK9PhYPZoOnw">
+        <resourceDemand_Action>
+          <specification_ParametericResourceDemand specification="120"/>
+          <requiredResource_ParametricResourceDemand href="pathmap://PCM_MODELS/Palladio.resourcetype#_oro4gG3fEdy4YaaT-RYrLQ"/>
+        </resourceDemand_Action>
+      </steps_Behaviour>
+    </serviceEffectSpecifications__BasicComponent>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_la2AwFmQEeqUsLz76kRHmw" describedService__SEFF="__qKjcFcWEequG_lNC9e-aA"/>
+  </components__Repository>
+  <components__Repository xsi:type="repository:BasicComponent" id="_Ngwf0FmIEeqK9PhYPZoOnw" entityName="Client Application"/>
+  <components__Repository xsi:type="repository:BasicComponent" id="_pbn9UFmKEeqK9PhYPZoOnw" entityName="Message Queue Trigger"/>
   <interfaces__Repository xsi:type="repository:OperationInterface" id="_TtLJAAKvEemROr8Jgz8NJQ" entityName="IHttpEndPoint">
     <signatures__OperationInterface id="_WQuq4AKvEemROr8Jgz8NJQ" entityName="submitFile">
       <parameters__OperationSignature parameterName="paymentsFile">

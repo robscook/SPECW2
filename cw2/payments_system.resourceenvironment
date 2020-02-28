@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <resourceenvironment:ResourceEnvironment xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:resourceenvironment="http://palladiosimulator.org/PalladioComponentModel/ResourceEnvironment/5.2" entityName="New ResourceEnvironment">
-  <linkingResources__ResourceEnvironment id="_hajswAK0EemROr8Jgz8NJQ" entityName="Network" connectedResourceContainers_LinkingResource="_d_DPMAK0EemROr8Jgz8NJQ _fnAEcAK0EemROr8Jgz8NJQ">
+  <linkingResources__ResourceEnvironment id="_hajswAK0EemROr8Jgz8NJQ" entityName="Network" connectedResourceContainers_LinkingResource="_d_DPMAK0EemROr8Jgz8NJQ _fnAEcAK0EemROr8Jgz8NJQ _TAiMIFmREeqUsLz76kRHmw">
     <communicationLinkResourceSpecifications_LinkingResource id="_hajswQK0EemROr8Jgz8NJQ">
       <communicationLinkResourceType_CommunicationLinkResourceSpecification href="pathmap://PCM_MODELS/Palladio.resourcetype#_o3sScH2AEdyH8uerKnHYug"/>
       <latency_CommunicationLinkResourceSpecification specification="0"/>
@@ -13,12 +13,34 @@
       <activeResourceType_ActiveResourceSpecification href="pathmap://PCM_MODELS/Palladio.resourcetype#_oro4gG3fEdy4YaaT-RYrLQ"/>
       <processingRate_ProcessingResourceSpecification specification="2000000"/>
     </activeResourceSpecifications_ResourceContainer>
+    <activeResourceSpecifications_ResourceContainer id="_whQmIAK0EemROr8Jgz8NJQ">
+      <schedulingPolicy href="pathmap://PCM_MODELS/Palladio.resourcetype#FCFS"/>
+      <activeResourceType_ActiveResourceSpecification href="pathmap://PCM_MODELS/Palladio.resourcetype#_BIjHoQ3KEdyouMqirZIhzQ"/>
+      <processingRate_ProcessingResourceSpecification specification="0.02"/>
+    </activeResourceSpecifications_ResourceContainer>
   </resourceContainer_ResourceEnvironment>
   <resourceContainer_ResourceEnvironment id="_fnAEcAK0EemROr8Jgz8NJQ" entityName="OracleServer">
     <activeResourceSpecifications_ResourceContainer id="_sOmeIAK0EemROr8Jgz8NJQ" numberOfReplicas="16">
       <schedulingPolicy href="pathmap://PCM_MODELS/Palladio.resourcetype#ProcessorSharing"/>
       <activeResourceType_ActiveResourceSpecification href="pathmap://PCM_MODELS/Palladio.resourcetype#_oro4gG3fEdy4YaaT-RYrLQ"/>
       <processingRate_ProcessingResourceSpecification specification="4000000"/>
+    </activeResourceSpecifications_ResourceContainer>
+    <activeResourceSpecifications_ResourceContainer id="_whQmIAK0EemROr8Jgz8NJQ">
+      <schedulingPolicy href="pathmap://PCM_MODELS/Palladio.resourcetype#FCFS"/>
+      <activeResourceType_ActiveResourceSpecification href="pathmap://PCM_MODELS/Palladio.resourcetype#_BIjHoQ3KEdyouMqirZIhzQ"/>
+      <processingRate_ProcessingResourceSpecification specification="0.02"/>
+    </activeResourceSpecifications_ResourceContainer>
+    <activeResourceSpecifications_ResourceContainer id="_whQmIAK0EemROr8Jgz8NJQ">
+      <schedulingPolicy href="pathmap://PCM_MODELS/Palladio.resourcetype#FCFS"/>
+      <activeResourceType_ActiveResourceSpecification href="pathmap://PCM_MODELS/Palladio.resourcetype#_BIjHoQ3KEdyouMqirZIhzQ"/>
+      <processingRate_ProcessingResourceSpecification specification="0.02"/>
+    </activeResourceSpecifications_ResourceContainer>
+  </resourceContainer_ResourceEnvironment>
+  <resourceContainer_ResourceEnvironment id="_TAiMIFmREeqUsLz76kRHmw" entityName="MP, PEM">
+    <activeResourceSpecifications_ResourceContainer id="_lqgfAAK0EemROr8Jgz8NJQ" numberOfReplicas="8">
+      <schedulingPolicy href="pathmap://PCM_MODELS/Palladio.resourcetype#ProcessorSharing"/>
+      <activeResourceType_ActiveResourceSpecification href="pathmap://PCM_MODELS/Palladio.resourcetype#_oro4gG3fEdy4YaaT-RYrLQ"/>
+      <processingRate_ProcessingResourceSpecification specification="2000000"/>
     </activeResourceSpecifications_ResourceContainer>
     <activeResourceSpecifications_ResourceContainer id="_whQmIAK0EemROr8Jgz8NJQ">
       <schedulingPolicy href="pathmap://PCM_MODELS/Palladio.resourcetype#FCFS"/>
