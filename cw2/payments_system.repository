@@ -100,25 +100,28 @@
   <components__Repository xsi:type="repository:BasicComponent" id="_9yGwQFcDEequG_lNC9e-aA" entityName="PEM">
     <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_fjvsgFcJEequG_lNC9e-aA" entityName="PEM.MP.OperationProvidedRole1" providedInterface__OperationProvidedRole="_9N53AFcDEequG_lNC9e-aA"/>
     <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_02uJwFfsEeqUs9LIlFJB8Q" entityName="PEM.PEM Interface.OperationProvidedRole2" providedInterface__OperationProvidedRole="_HZiLQFcJEequG_lNC9e-aA"/>
+    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_DQwpsFoXEeqBZ6p7P8mq-g" entityName="PEM.IOracleDB.OperationRequiredRole1" requiredInterface__OperationRequiredRole="_maCQwAKvEemROr8Jgz8NJQ"/>
     <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_03IZcFfsEeqUs9LIlFJB8Q" describedService__SEFF="__qKjcFcWEequG_lNC9e-aA">
       <steps_Behaviour xsi:type="seff:StartAction" id="_03JAgFfsEeqUs9LIlFJB8Q" successor_AbstractAction="_37dGEFfsEeqUs9LIlFJB8Q"/>
-      <steps_Behaviour xsi:type="seff:StopAction" id="_03JAgVfsEeqUs9LIlFJB8Q" predecessor_AbstractAction="_37dGEFfsEeqUs9LIlFJB8Q"/>
-      <steps_Behaviour xsi:type="seff:InternalAction" id="_37dGEFfsEeqUs9LIlFJB8Q" entityName="InternalAction1" predecessor_AbstractAction="_03JAgFfsEeqUs9LIlFJB8Q" successor_AbstractAction="_03JAgVfsEeqUs9LIlFJB8Q">
+      <steps_Behaviour xsi:type="seff:StopAction" id="_03JAgVfsEeqUs9LIlFJB8Q" predecessor_AbstractAction="_cILPMFoXEeqBZ6p7P8mq-g"/>
+      <steps_Behaviour xsi:type="seff:InternalAction" id="_37dGEFfsEeqUs9LIlFJB8Q" entityName="Create Exception" predecessor_AbstractAction="_03JAgFfsEeqUs9LIlFJB8Q" successor_AbstractAction="_cILPMFoXEeqBZ6p7P8mq-g">
         <resourceDemand_Action>
           <specification_ParametericResourceDemand specification="100"/>
           <requiredResource_ParametricResourceDemand href="pathmap://PCM_MODELS/Palladio.resourcetype#_oro4gG3fEdy4YaaT-RYrLQ"/>
         </resourceDemand_Action>
       </steps_Behaviour>
+      <steps_Behaviour xsi:type="seff:ExternalCallAction" id="_cILPMFoXEeqBZ6p7P8mq-g" entityName="Write Exception" predecessor_AbstractAction="_37dGEFfsEeqUs9LIlFJB8Q" successor_AbstractAction="_03JAgVfsEeqUs9LIlFJB8Q" calledService_ExternalService="_bek9IFfpEeqUs9LIlFJB8Q" role_ExternalService="_DQwpsFoXEeqBZ6p7P8mq-g"/>
     </serviceEffectSpecifications__BasicComponent>
     <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_03Wb4FfsEeqUs9LIlFJB8Q" describedService__SEFF="_E_O64FfsEeqUs9LIlFJB8Q">
       <steps_Behaviour xsi:type="seff:StartAction" id="_03Wb4VfsEeqUs9LIlFJB8Q" successor_AbstractAction="_BHGWQFftEeqUs9LIlFJB8Q"/>
-      <steps_Behaviour xsi:type="seff:StopAction" id="_03Wb4lfsEeqUs9LIlFJB8Q" predecessor_AbstractAction="_BHGWQFftEeqUs9LIlFJB8Q"/>
-      <steps_Behaviour xsi:type="seff:InternalAction" id="_BHGWQFftEeqUs9LIlFJB8Q" entityName="InternalAction1" predecessor_AbstractAction="_03Wb4VfsEeqUs9LIlFJB8Q" successor_AbstractAction="_03Wb4lfsEeqUs9LIlFJB8Q">
+      <steps_Behaviour xsi:type="seff:StopAction" id="_03Wb4lfsEeqUs9LIlFJB8Q" predecessor_AbstractAction="_GrHbQFoYEeqBZ6p7P8mq-g"/>
+      <steps_Behaviour xsi:type="seff:InternalAction" id="_BHGWQFftEeqUs9LIlFJB8Q" entityName="Referral" predecessor_AbstractAction="_03Wb4VfsEeqUs9LIlFJB8Q" successor_AbstractAction="_GrHbQFoYEeqBZ6p7P8mq-g">
         <resourceDemand_Action>
           <specification_ParametericResourceDemand specification="200"/>
           <requiredResource_ParametricResourceDemand href="pathmap://PCM_MODELS/Palladio.resourcetype#_oro4gG3fEdy4YaaT-RYrLQ"/>
         </resourceDemand_Action>
       </steps_Behaviour>
+      <steps_Behaviour xsi:type="seff:ExternalCallAction" id="_GrHbQFoYEeqBZ6p7P8mq-g" entityName="Write Referral" predecessor_AbstractAction="_BHGWQFftEeqUs9LIlFJB8Q" successor_AbstractAction="_03Wb4lfsEeqUs9LIlFJB8Q" calledService_ExternalService="_bkJZoFfpEeqUs9LIlFJB8Q" role_ExternalService="_DQwpsFoXEeqBZ6p7P8mq-g"/>
     </serviceEffectSpecifications__BasicComponent>
   </components__Repository>
   <components__Repository xsi:type="repository:BasicComponent" id="_wJarAFmKEeqK9PhYPZoOnw" entityName="Server Application">
