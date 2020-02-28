@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<repository:Repository xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:repository="http://palladiosimulator.org/PalladioComponentModel/Repository/5.2" xmlns:seff="http://palladiosimulator.org/PalladioComponentModel/SEFF/5.2" id="_xLCKoAKuEemROr8Jgz8NJQ" entityName="Payments System Repository">
+<repository:Repository xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:repository="http://palladiosimulator.org/PalladioComponentModel/Repository/5.2" xmlns:seff="http://palladiosimulator.org/PalladioComponentModel/SEFF/5.2" id="_xLCKoAKuEemROr8Jgz8NJQ" entityName="Payments System Repository" repositoryDescription="">
   <components__Repository xsi:type="repository:BasicComponent" id="_dTBo8AKvEemROr8Jgz8NJQ" entityName="InboundProcessing">
     <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_hb_pcAKvEemROr8Jgz8NJQ" entityName="IHttpEndPoint" providedInterface__OperationProvidedRole="_TtLJAAKvEemROr8Jgz8NJQ"/>
     <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_wMmXAAKvEemROr8Jgz8NJQ" entityName="IOracleDB" requiredInterface__OperationRequiredRole="_maCQwAKvEemROr8Jgz8NJQ"/>
@@ -11,12 +11,18 @@
       <steps_Behaviour xsi:type="seff:StopAction" id="_hb_pcwKvEemROr8Jgz8NJQ" predecessor_AbstractAction="_TCGWgFpOEeq5FP5-I79vAw"/>
       <steps_Behaviour xsi:type="seff:ExternalCallAction" id="_TCGWgFpOEeq5FP5-I79vAw" entityName="Create task" predecessor_AbstractAction="_hGJEYFofEeqezr6n0Wr8Sw" successor_AbstractAction="_hb_pcwKvEemROr8Jgz8NJQ" calledService_ExternalService="_RDA0oFpDEeq5FP5-I79vAw" role_ExternalService="_2qIQ0FpMEeq5FP5-I79vAw"/>
       <steps_Behaviour xsi:type="seff:ExternalCallAction" id="_9pxt0AKvEemROr8Jgz8NJQ" entityName="Backup Submission File" predecessor_AbstractAction="_hb_pcgKvEemROr8Jgz8NJQ" successor_AbstractAction="_K6sxUAKwEemROr8Jgz8NJQ" calledService_ExternalService="_-OypMFfoEeqUs9LIlFJB8Q" role_ExternalService="_wMmXAAKvEemROr8Jgz8NJQ"/>
-      <steps_Behaviour xsi:type="seff:BranchAction" id="_hGJEYFofEeqezr6n0Wr8Sw" entityName="Exceptions greater than z&#xA;ero" predecessor_AbstractAction="_EetlUAKwEemROr8Jgz8NJQ" successor_AbstractAction="_TCGWgFpOEeq5FP5-I79vAw">
+      <steps_Behaviour xsi:type="seff:BranchAction" id="_hGJEYFofEeqezr6n0Wr8Sw" entityName="Exceptions greater than zero" predecessor_AbstractAction="_EetlUAKwEemROr8Jgz8NJQ" successor_AbstractAction="_TCGWgFpOEeq5FP5-I79vAw">
         <branches_Branch xsi:type="seff:ProbabilisticBranchTransition" id="_7D4UwFpLEeq5FP5-I79vAw" entityName="number of exceptions" branchProbability="0.05">
           <branchBehaviour_BranchTransition id="_7D470FpLEeq5FP5-I79vAw">
             <steps_Behaviour xsi:type="seff:StartAction" id="_7D470VpLEeq5FP5-I79vAw" successor_AbstractAction="_bF9UsFpNEeq5FP5-I79vAw"/>
             <steps_Behaviour xsi:type="seff:StopAction" id="_7D470lpLEeq5FP5-I79vAw" predecessor_AbstractAction="_bF9UsFpNEeq5FP5-I79vAw"/>
             <steps_Behaviour xsi:type="seff:ExternalCallAction" id="_bF9UsFpNEeq5FP5-I79vAw" entityName="referral" predecessor_AbstractAction="_7D470VpLEeq5FP5-I79vAw" successor_AbstractAction="_7D470lpLEeq5FP5-I79vAw" calledService_ExternalService="_E_O64FfsEeqUs9LIlFJB8Q" role_ExternalService="_Z36NMFpNEeq5FP5-I79vAw"/>
+          </branchBehaviour_BranchTransition>
+        </branches_Branch>
+        <branches_Branch xsi:type="seff:ProbabilisticBranchTransition" id="_asf0YFpkEeqaKLwKpkSXRg" entityName="ProbabilisticBranchTransition2" branchProbability="0.95">
+          <branchBehaviour_BranchTransition id="_asgbcFpkEeqaKLwKpkSXRg">
+            <steps_Behaviour xsi:type="seff:StartAction" id="_ashCgFpkEeqaKLwKpkSXRg" successor_AbstractAction="_ashCgVpkEeqaKLwKpkSXRg"/>
+            <steps_Behaviour xsi:type="seff:StopAction" id="_ashCgVpkEeqaKLwKpkSXRg" predecessor_AbstractAction="_ashCgFpkEeqaKLwKpkSXRg"/>
           </branchBehaviour_BranchTransition>
         </branches_Branch>
       </steps_Behaviour>
@@ -52,7 +58,7 @@
         </resourceDemand_Action>
       </steps_Behaviour>
     </serviceEffectSpecifications__BasicComponent>
-    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_vGgRoAKvEemROr8Jgz8NJQ" describedService__SEFF="_rdMBkAKvEemROr8Jgz8NJQ">
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_vGgRoAKvEemROr8Jgz8NJ" describedService__SEFF="_rdMBkAKvEemROr8Jgz8NJQ">
       <steps_Behaviour xsi:type="seff:StartAction" id="_vGgRoQKvEemROr8Jgz8NJQ" successor_AbstractAction="_KGiMoAK0EemROr8Jgz8NJQ"/>
       <steps_Behaviour xsi:type="seff:StopAction" id="_vGgRogKvEemROr8Jgz8NJQ" predecessor_AbstractAction="_KGiMoAK0EemROr8Jgz8NJQ"/>
       <steps_Behaviour xsi:type="seff:InternalAction" id="_KGiMoAK0EemROr8Jgz8NJQ" entityName="InternalAction1" predecessor_AbstractAction="_vGgRoQKvEemROr8Jgz8NJQ" successor_AbstractAction="_vGgRogKvEemROr8Jgz8NJQ">
@@ -139,17 +145,6 @@
     <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_Via50FowEeq5FP5-I79vAw" entityName="Server Application.IServer Application.OperationProvidedRole3" providedInterface__OperationProvidedRole="_sUL24FovEeq5FP5-I79vAw"/>
     <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_QdjcUFoxEeq5FP5-I79vAw" entityName="Server Application.IOracleDB.OperationRequiredRole1" requiredInterface__OperationRequiredRole="_maCQwAKvEemROr8Jgz8NJQ"/>
     <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_G7P3QFo_Eeq5FP5-I79vAw" entityName="Server Application.PEM Interface.OperationRequiredRole2" requiredInterface__OperationRequiredRole="_HZiLQFcJEequG_lNC9e-aA"/>
-    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_HMJC8FmPEeqK9PhYPZoOnw" describedService__SEFF="_qUOOYAKvEemROr8Jgz8NJQ">
-      <steps_Behaviour xsi:type="seff:StartAction" id="_HMJC8VmPEeqK9PhYPZoOnw" successor_AbstractAction="_Q8xPgFmPEeqK9PhYPZoOnw"/>
-      <steps_Behaviour xsi:type="seff:StopAction" id="_HMJC8lmPEeqK9PhYPZoOnw" predecessor_AbstractAction="_Q8xPgFmPEeqK9PhYPZoOnw"/>
-      <steps_Behaviour xsi:type="seff:InternalAction" id="_Q8xPgFmPEeqK9PhYPZoOnw" entityName="InternalAction1" predecessor_AbstractAction="_HMJC8VmPEeqK9PhYPZoOnw" successor_AbstractAction="_HMJC8lmPEeqK9PhYPZoOnw">
-        <resourceDemand_Action>
-          <specification_ParametericResourceDemand specification="120"/>
-          <requiredResource_ParametricResourceDemand href="pathmap://PCM_MODELS/Palladio.resourcetype#_oro4gG3fEdy4YaaT-RYrLQ"/>
-        </resourceDemand_Action>
-      </steps_Behaviour>
-    </serviceEffectSpecifications__BasicComponent>
-    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_la2AwFmQEeqUsLz76kRHmw" describedService__SEFF="__qKjcFcWEequG_lNC9e-aA"/>
     <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_ViqxcFowEeq5FP5-I79vAw" describedService__SEFF="_J5DqAFowEeq5FP5-I79vAw">
       <steps_Behaviour xsi:type="seff:StartAction" id="_VirYgFowEeq5FP5-I79vAw" successor_AbstractAction="_mqvQMFoxEeq5FP5-I79vAw"/>
       <steps_Behaviour xsi:type="seff:StopAction" id="_VirYgVowEeq5FP5-I79vAw" predecessor_AbstractAction="_h5gfYFo9Eeq5FP5-I79vAw"/>

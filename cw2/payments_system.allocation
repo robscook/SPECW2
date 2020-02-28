@@ -10,4 +10,20 @@
     <resourceContainer_AllocationContext href="payments_system.resourceenvironment#_d_DPMAK0EemROr8Jgz8NJQ"/>
     <assemblyContext_AllocationContext href="payments_system.system#_zvFw4AKwEemROr8Jgz8NJQ"/>
   </allocationContexts_Allocation>
+  <allocationContexts_Allocation id="_q0-uIFpUEeq5FP5-I79vAw" entityName="Allocation_Assembly_PEM">
+    <resourceContainer_AllocationContext href="payments_system.resourceenvironment#_TAiMIFmREeqUsLz76kRHmw"/>
+    <assemblyContext_AllocationContext href="payments_system.system#_snr3UFpTEeq5FP5-I79vAw"/>
+  </allocationContexts_Allocation>
+  <allocationContexts_Allocation id="_uDClkFpUEeq5FP5-I79vAw" entityName="Allocation_Assembly_Server Application">
+    <resourceContainer_AllocationContext href="payments_system.resourceenvironment#_TAiMIFmREeqUsLz76kRHmw"/>
+    <assemblyContext_AllocationContext href="payments_system.system#_veYXoFpTEeq5FP5-I79vAw"/>
+  </allocationContexts_Allocation>
+  <allocationContexts_Allocation id="_wBTpEFpUEeq5FP5-I79vAw" entityName="Allocation_Assembly_Message Queue Trigger">
+    <resourceContainer_AllocationContext href="payments_system.resourceenvironment#_TAiMIFmREeqUsLz76kRHmw"/>
+    <assemblyContext_AllocationContext href="payments_system.system#_xIJx0FpTEeq5FP5-I79vAw"/>
+  </allocationContexts_Allocation>
+  <allocationContexts_Allocation id="_wXf7gFpUEeq5FP5-I79vAw" entityName="Allocation_Assembly_Client Application">
+    <resourceContainer_AllocationContext href="payments_system.resourceenvironment#_TAiMIFmREeqUsLz76kRHmw"/>
+    <assemblyContext_AllocationContext href="payments_system.system#_wNDbgFpTEeq5FP5-I79vAw"/>
+  </allocationContexts_Allocation>
 </allocation:Allocation>

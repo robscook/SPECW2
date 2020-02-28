@@ -6,12 +6,52 @@
   <assemblyContexts__ComposedStructure id="_04r2MAKwEemROr8Jgz8NJQ" entityName="Assembly_OracleDB">
     <encapsulatedComponent__AssemblyContext xsi:type="repository:BasicComponent" href="payments_system.repository#_s9BcoAKvEemROr8Jgz8NJQ"/>
   </assemblyContexts__ComposedStructure>
+  <assemblyContexts__ComposedStructure id="_snr3UFpTEeq5FP5-I79vAw" entityName="Assembly_PEM">
+    <encapsulatedComponent__AssemblyContext xsi:type="repository:BasicComponent" href="payments_system.repository#_9yGwQFcDEequG_lNC9e-aA"/>
+  </assemblyContexts__ComposedStructure>
+  <assemblyContexts__ComposedStructure id="_veYXoFpTEeq5FP5-I79vAw" entityName="Assembly_Server Application">
+    <encapsulatedComponent__AssemblyContext xsi:type="repository:BasicComponent" href="payments_system.repository#_wJarAFmKEeqK9PhYPZoOnw"/>
+  </assemblyContexts__ComposedStructure>
+  <assemblyContexts__ComposedStructure id="_wNDbgFpTEeq5FP5-I79vAw" entityName="Assembly_Client Application">
+    <encapsulatedComponent__AssemblyContext xsi:type="repository:BasicComponent" href="payments_system.repository#_Ngwf0FmIEeqK9PhYPZoOnw"/>
+  </assemblyContexts__ComposedStructure>
+  <assemblyContexts__ComposedStructure id="_xIJx0FpTEeq5FP5-I79vAw" entityName="Assembly_Message Queue Trigger">
+    <encapsulatedComponent__AssemblyContext xsi:type="repository:BasicComponent" href="payments_system.repository#_pbn9UFmKEeqK9PhYPZoOnw"/>
+  </assemblyContexts__ComposedStructure>
   <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_3BsxIAKwEemROr8Jgz8NJQ" entityName="newProvidedDelegationConnector" outerProvidedRole_ProvidedDelegationConnector="_v4QpQAKwEemROr8Jgz8NJQ" assemblyContext_ProvidedDelegationConnector="_zvFw4AKwEemROr8Jgz8NJQ">
     <innerProvidedRole_ProvidedDelegationConnector href="payments_system.repository#_hb_pcAKvEemROr8Jgz8NJQ"/>
   </connectors__ComposedStructure>
   <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_7H800AKwEemROr8Jgz8NJQ" entityName="newAssemblyConnector" requiringAssemblyContext_AssemblyConnector="_zvFw4AKwEemROr8Jgz8NJQ" providingAssemblyContext_AssemblyConnector="_04r2MAKwEemROr8Jgz8NJQ">
     <providedRole_AssemblyConnector href="payments_system.repository#_vF3_gAKvEemROr8Jgz8NJQ"/>
     <requiredRole_AssemblyConnector href="payments_system.repository#_wMmXAAKvEemROr8Jgz8NJQ"/>
+  </connectors__ComposedStructure>
+  <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_L_xNIFpXEeq5FP5-I79vAw" entityName="newAssemblyConnector" requiringAssemblyContext_AssemblyConnector="_veYXoFpTEeq5FP5-I79vAw" providingAssemblyContext_AssemblyConnector="_04r2MAKwEemROr8Jgz8NJQ">
+    <providedRole_AssemblyConnector href="payments_system.repository#_vF3_gAKvEemROr8Jgz8NJQ"/>
+    <requiredRole_AssemblyConnector href="payments_system.repository#_QdjcUFoxEeq5FP5-I79vAw"/>
+  </connectors__ComposedStructure>
+  <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_N8qXoFpXEeq5FP5-I79vAw" entityName="newAssemblyConnector" requiringAssemblyContext_AssemblyConnector="_snr3UFpTEeq5FP5-I79vAw" providingAssemblyContext_AssemblyConnector="_04r2MAKwEemROr8Jgz8NJQ">
+    <providedRole_AssemblyConnector href="payments_system.repository#_vF3_gAKvEemROr8Jgz8NJQ"/>
+    <requiredRole_AssemblyConnector href="payments_system.repository#_DQwpsFoXEeqBZ6p7P8mq-g"/>
+  </connectors__ComposedStructure>
+  <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_O-MGEFpXEeq5FP5-I79vAw" entityName="newAssemblyConnector" requiringAssemblyContext_AssemblyConnector="_xIJx0FpTEeq5FP5-I79vAw" providingAssemblyContext_AssemblyConnector="_04r2MAKwEemROr8Jgz8NJQ">
+    <providedRole_AssemblyConnector href="payments_system.repository#_vF3_gAKvEemROr8Jgz8NJQ"/>
+    <requiredRole_AssemblyConnector href="payments_system.repository#_Irh6YFpFEeq5FP5-I79vAw"/>
+  </connectors__ComposedStructure>
+  <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_Qn-uYFpXEeq5FP5-I79vAw" entityName="newAssemblyConnector" requiringAssemblyContext_AssemblyConnector="_zvFw4AKwEemROr8Jgz8NJQ" providingAssemblyContext_AssemblyConnector="_snr3UFpTEeq5FP5-I79vAw">
+    <providedRole_AssemblyConnector href="payments_system.repository#_02uJwFfsEeqUs9LIlFJB8Q"/>
+    <requiredRole_AssemblyConnector href="payments_system.repository#_Z36NMFpNEeq5FP5-I79vAw"/>
+  </connectors__ComposedStructure>
+  <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_RgVSsFpXEeq5FP5-I79vAw" entityName="newAssemblyConnector" requiringAssemblyContext_AssemblyConnector="_zvFw4AKwEemROr8Jgz8NJQ" providingAssemblyContext_AssemblyConnector="_veYXoFpTEeq5FP5-I79vAw">
+    <providedRole_AssemblyConnector href="payments_system.repository#_Via50FowEeq5FP5-I79vAw"/>
+    <requiredRole_AssemblyConnector href="payments_system.repository#_4HSLUFpMEeq5FP5-I79vAw"/>
+  </connectors__ComposedStructure>
+  <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_S7u5sFpXEeq5FP5-I79vAw" entityName="newAssemblyConnector" requiringAssemblyContext_AssemblyConnector="_zvFw4AKwEemROr8Jgz8NJQ" providingAssemblyContext_AssemblyConnector="_wNDbgFpTEeq5FP5-I79vAw">
+    <providedRole_AssemblyConnector href="payments_system.repository#_ekCwsFpDEeq5FP5-I79vAw"/>
+    <requiredRole_AssemblyConnector href="payments_system.repository#_2qIQ0FpMEeq5FP5-I79vAw"/>
+  </connectors__ComposedStructure>
+  <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_VFbxIFpXEeq5FP5-I79vAw" entityName="newAssemblyConnector" requiringAssemblyContext_AssemblyConnector="_veYXoFpTEeq5FP5-I79vAw" providingAssemblyContext_AssemblyConnector="_snr3UFpTEeq5FP5-I79vAw">
+    <providedRole_AssemblyConnector href="payments_system.repository#_02uJwFfsEeqUs9LIlFJB8Q"/>
+    <requiredRole_AssemblyConnector href="payments_system.repository#_G7P3QFo_Eeq5FP5-I79vAw"/>
   </connectors__ComposedStructure>
   <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_v4QpQAKwEemROr8Jgz8NJQ" entityName="IHttpEndPoint">
     <providedInterface__OperationProvidedRole href="payments_system.repository#_TtLJAAKvEemROr8Jgz8NJQ"/>
